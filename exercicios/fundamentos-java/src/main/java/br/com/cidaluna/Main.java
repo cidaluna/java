@@ -1,6 +1,7 @@
 package main.java.br.com.cidaluna;
 
 import main.java.br.com.cidaluna.annotation.ExemploAnnotationProduto;
+import main.java.br.com.cidaluna.annotation.ExemploVisibleCliente;
 import main.java.br.com.cidaluna.annotation.ExemploVisibleProduto;
 import main.java.br.com.cidaluna.colecoes.ExemploList;
 import main.java.br.com.cidaluna.colecoes.ExemploListProduto;
@@ -40,7 +41,10 @@ public class Main {
         System.out.println("\n### Annotation @CampoObrigatorio ###");
         ExemploAnnotationProduto.executar();
 
-        System.out.println("\n### Annotation @Visible ###");
+        System.out.println("\n### Annotation @Visible - Produto ###");
         ExemploVisibleProduto.executar();
+
+        System.out.println("\n### Annotation @Visible - Cliente ###");
+        ExemploVisibleCliente.executar();
     }
 }

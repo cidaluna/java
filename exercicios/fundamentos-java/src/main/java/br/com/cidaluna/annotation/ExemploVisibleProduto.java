@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
 public class ExemploVisibleProduto {
 
     public static void executar() throws IllegalAccessException {
-        System.out.println("----> Annotation customizada (@Visible)");
+        System.out.println("----> Annotation customizada (@Visible) Produto");
 
         Produto produto = new Produto(1, "Notebook", 4500.00);
 
