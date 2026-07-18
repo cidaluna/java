@@ -9,7 +9,7 @@ public class GeradorDeArquivo {
     private static final String NOME_ARQUIVO = "benchmarck.txt";
     private static final String LINHA_BASE =
             "Esta eh uma linha de exemplo para benchmarck de leitura de arquivo.";
-    private static final long TAMANHO_ALVO = 40L * 1024 * 1024; // 40 MB
+    private static final long TAMANHO_ALVO = 10L * 1024 * 1024; // 10 MB
 
     public static void executar() throws IOException {
         Path caminho = Paths.get(NOME_ARQUIVO);
