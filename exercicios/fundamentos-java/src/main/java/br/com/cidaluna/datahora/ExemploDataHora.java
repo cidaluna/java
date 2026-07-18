@@ -26,6 +26,11 @@ public class ExemploDataHora {
         DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter formatoDataHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
+        String dataUsuario = "01/05/2025";
+        LocalDate data = LocalDate.parse(dataUsuario, formatoData);
+        DateTimeFormatter outroFormato = DateTimeFormatter.ofPattern("dd/MM/yy");
+        System.out.println(data.format(outroFormato));
+
         System.out.println("\n--- Formatado ---");
         System.out.println("Data formatada: " + dataAtual.format(formatoData));
         System.out.println("Data e hora formatada: " + dataHoraAtual.format(formatoDataHora));
