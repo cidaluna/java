@@ -1,10 +1,15 @@
 package main.java.br.com.cidaluna.modelo;
 
+import main.java.br.com.cidaluna.annotation.CampoObrigatorio;
+
 import java.util.Objects;
 
 public class Produto {
     private int id;
+
+    @CampoObrigatorio(mensagem = "A descrição do produto é obrigatória")
     private String descricao;
+
     private double preco;
 
     public Produto(int id, String descricao, double preco) {

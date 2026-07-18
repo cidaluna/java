@@ -1,5 +1,6 @@
 package main.java.br.com.cidaluna;
 
+import main.java.br.com.cidaluna.annotation.ExemploAnnotationProduto;
 import main.java.br.com.cidaluna.colecoes.ExemploList;
 import main.java.br.com.cidaluna.colecoes.ExemploListProduto;
 import main.java.br.com.cidaluna.colecoes.ExemploMap;
@@ -34,5 +35,8 @@ public class Main {
 
         System.out.println("\n### Reflection ###");
         ExemploReflectionProduto.executar();
+
+        System.out.println("\n### Annotation ###");
+        ExemploAnnotationProduto.executar();
     }
 }
