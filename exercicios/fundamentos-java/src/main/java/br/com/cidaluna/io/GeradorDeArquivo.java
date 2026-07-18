@@ -14,9 +14,9 @@ public class GeradorDeArquivo {
     public static void executar() throws IOException {
         Path caminho = Paths.get(NOME_ARQUIVO);
 
-        // evita regerar um arquivo de 200MB toda vez que a MainClass rodar
+        // evita regerar um arquivo de 2MB toda vez que a MainClass rodar
         if (Files.exists(caminho)) {
-            System.out.println("Arquivo '" + NOME_ARQUIVO + "' já existe, geração ignorada.");
+            System.out.println("Arquivo '" + NOME_ARQUIVO + "' já existe, geração ignorada 2MB.");
             return;
         }
 
