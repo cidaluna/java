@@ -1,5 +1,9 @@
 package main.java.br.com.cidaluna;
 
+import main.java.br.com.cidaluna.colecoes.ExemploList;
+import main.java.br.com.cidaluna.colecoes.ExemploListProduto;
+import main.java.br.com.cidaluna.colecoes.ExemploMap;
+import main.java.br.com.cidaluna.colecoes.ExemploSet;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploCondicional;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoFor;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoWhile;
@@ -12,5 +16,11 @@ public class Main {
         ExemploCondicional.executar();
         ExemploLacoWhile.executar();
         ExemploLacoFor.executar();
+
+        System.out.println("\n### Coleções ###");
+        ExemploList.executar();
+        ExemploSet.executar();
+        ExemploMap.executar();
+        ExemploListProduto.executar();
     }
 }
