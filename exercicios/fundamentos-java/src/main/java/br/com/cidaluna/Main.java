@@ -9,9 +9,10 @@ import main.java.br.com.cidaluna.estruturascontrole.ExemploCondicional;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoFor;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoWhile;
 import main.java.br.com.cidaluna.optional.ExemploOptionalProduto;
+import main.java.br.com.cidaluna.reflection.ExemploReflectionProduto;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("Olá, Cida! Projeto fundamentos-java iniciado.");
 
         System.out.println("### Estruturas de Controle ###");
@@ -30,5 +31,8 @@ public class Main {
 
         System.out.println("\n### Date and Time ###");
         ExemploDataHora.executar();
+
+        System.out.println("\n### Reflection ###");
+        ExemploReflectionProduto.executar();
     }
 }
