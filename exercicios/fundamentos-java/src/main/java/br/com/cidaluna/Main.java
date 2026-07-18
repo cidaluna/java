@@ -13,6 +13,7 @@ import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoFor;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoWhile;
 import main.java.br.com.cidaluna.optional.ExemploOptionalProduto;
 import main.java.br.com.cidaluna.reflection.ExemploReflectionProduto;
+import main.java.br.com.cidaluna.regex.ExemploRegexCliente;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -46,5 +47,8 @@ public class Main {
 
         System.out.println("\n### Annotation @Visible - Cliente ###");
         ExemploVisibleCliente.executar();
+
+        System.out.println("\n### Regex - Cliente ###");
+        ExemploRegexCliente.executar();
     }
 }

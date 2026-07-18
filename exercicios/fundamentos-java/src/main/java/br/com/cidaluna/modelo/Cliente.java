@@ -13,11 +13,21 @@ public class Cliente {
 
     private String email;
 
+    private String cep;
+
     public Cliente(int id, String nome, String cpf, String email) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
+    }
+
+    public Cliente(int id, String nome, String cpf, String email, String cep) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.cep = cep;
     }
 
     public int getId() {
@@ -34,6 +44,10 @@ public class Cliente {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getCep() {
+        return cep;
     }
 
     @Override
