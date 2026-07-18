@@ -1,10 +1,10 @@
 package main.java.br.com.cidaluna.modelo;
 
 import main.java.br.com.cidaluna.annotation.CampoObrigatorio;
-
-import java.util.Objects;
+import main.java.br.com.cidaluna.annotation.Visible;
 
 public class Produto {
+    @Visible(false) // simula um campo "interno", que não deveria aparecer pro usuário final
     private int id;
 
     @CampoObrigatorio(mensagem = "A descrição do produto é obrigatória")
