@@ -15,12 +15,14 @@ public class GeradorDeArquivo {
         Path caminho = Paths.get(NOME_ARQUIVO);
 
         // evita regerar um arquivo de 2MB toda vez que a MainClass rodar
+        /*
         if (Files.exists(caminho)) {
             System.out.println("Arquivo '" + NOME_ARQUIVO + "' já existe, geração ignorada 2MB.");
             return;
         }
+         */
 
-        System.out.println("Gerando arquivo de benchmark (~100MB)... isso pode levar alguns segundos.");
+        System.out.println("Gerando arquivo de benchmark... isso pode levar alguns segundos.");
 
         try (BufferedWriter escritor = Files.newBufferedWriter(caminho)) {
             String linhaComQuebra = LINHA_BASE + System.lineSeparator();
