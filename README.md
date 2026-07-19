@@ -34,6 +34,8 @@ A `MainClass` centraliza a chamada de todos os exemplos, servindo como ponto ún
 ### `modelo`
 Classes de domínio usadas como base para os exemplos práticos.
 - `Produto`: entidade simples com `id`, `descricao` e `preco`.
+- `Cliente`: entidade com `id`, `nome`, `cpf`, `email` e `cep`.
+- `Veiculo`: entidade com `nome`, `marca`, `cor`, `preco`, `ano` e `velocidadeMaxima`.
 
 ### `estruturascontrole`
 Estruturas condicionais e de repetição.
@@ -67,6 +69,27 @@ Metadados customizados e seu processamento via reflection.
 - `Visible`: annotation que controla se um campo deve ser exibido.
 - `ExemploAnnotationProduto`: validação de campos obrigatórios de `Produto`.
 - `ExemploVisibleProduto`: exibição condicional de campos de `Produto` conforme `@Visible`.
+- `ExemploVisibleCliente`: exibição condicional de campos de `Cliente` conforme `@Visible`.
+
+### `regex`
+Validação de padrões de texto com `Pattern` e `Matcher`.
+- `ExemploRegexCliente`: validação de e-mail e CEP do `Cliente` via expressões regulares.
+
+### `criptografia`
+Criptografia simétrica com a Java Cryptography Architecture (JCA).
+- `ExemploCriptografia`: criptografa e descriptografa um texto com AES, usando Base64 para exibição.
+
+### `io`
+Comparativo entre as três gerações de I/O do Java: `java.io`, `java.nio` e `java.nio.file` (NIO.2).
+- `GeradorArquivoBenchmark`: gera um arquivo de texto de tamanho controlado para os testes de leitura.
+- `ExemploIoTradicional`: leitura de arquivo com `BufferedReader` (`java.io`).
+- `ExemploNioBuffer`: leitura de arquivo com `ByteBuffer` e `FileChannel` (`java.nio`).
+- `ExemploNio2Files`: leitura de arquivo com `Files.lines` (NIO.2).
+
+### `streams`
+Processamento funcional de coleções com a Stream API.
+- `ExemploStreamVeiculo`: uso de `filter`, `map`, `sorted`, `anyMatch`, `average` e `groupingBy` sobre uma lista de `Veiculo`.
+
 ---
  
 ## Como Executar
@@ -78,4 +101,5 @@ Execute a classe `MainClass` diretamente pela IDE. Ela chama, em sequência, os 
 ## Convenções do Projeto
  
 - Pacotes organizados por conceito estudado, não por camada de aplicação.
+- O arquivo `benchmarck.txt`, gerado pelo pacote `io`, não é versionado (adicionado no `.gitignore`).
 - Commits seguindo [Conventional Commits](https://www.conventionalcommits.org/).
