@@ -9,17 +9,18 @@ public class ExemploExceptionDivisaoInteiros {
         System.out.println("----> Exceção Divisão Números Inteiros");
 
         try (Scanner scanner = new Scanner(System.in)) {
+            int primeiro, segundo, resultado;
 
             System.out.print("Primeiro número: ");
-            int primeiro = scanner.nextInt();
+            primeiro = Integer.parseInt(scanner.nextLine());
 
             System.out.print("Segundo número: ");
-            int segundo = scanner.nextInt();
+            segundo = scanner.nextInt();
 
-            int resultado = primeiro / segundo;
+            resultado = primeiro / segundo;
             System.out.println("Resultado: " + resultado);
 
-        } catch (InputMismatchException e) {
+        } catch (InputMismatchException | NumberFormatException e) {
             // O token digitado não é um inteiro válido (ex.: letras).
             System.err.println("Erro - Entrada inválida: digite apenas números inteiros.");
 
@@ -33,7 +34,8 @@ public class ExemploExceptionDivisaoInteiros {
 
         } catch (Exception e) {
             // Rede de segurança: qualquer outra exceção não prevista acima
-            System.err.println("Erro - " + e.getMessage());
+            System.err.println("Erro! " + e.getClass().getName());
+            System.err.println("Erro ----> " + e.getMessage());
         }
     }
 }
