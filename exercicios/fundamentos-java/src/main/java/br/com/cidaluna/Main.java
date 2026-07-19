@@ -1,4 +1,4 @@
-package main.java.br.com.cidaluna;
+package br.com.cidaluna;
 
 import main.java.br.com.cidaluna.annotation.ExemploAnnotationProduto;
 import main.java.br.com.cidaluna.annotation.ExemploVisibleCliente;
