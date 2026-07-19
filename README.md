@@ -24,7 +24,12 @@ fundamentos-java/src/main/java/br/com/cidaluna/
 ├── optional/
 ├── datahora/
 ├── reflection/
-└── annotation/
+├── annotation/
+├── regex/
+├── criptografia/
+├── io/
+├── excecoes/
+└── streams/
 ```
  
 A `MainClass` centraliza a chamada de todos os exemplos, servindo como ponto único de execução e revisão do conteúdo estudado.
@@ -85,6 +90,10 @@ Comparativo entre as três gerações de I/O do Java: `java.io`, `java.nio` e `j
 - `ExemploIoTradicional`: leitura de arquivo com `BufferedReader` (`java.io`).
 - `ExemploNioBuffer`: leitura de arquivo com `ByteBuffer` e `FileChannel` (`java.nio`).
 - `ExemploNio2Files`: leitura de arquivo com `Files.lines` (NIO.2).
+
+### `excecoes`
+Tratamento de exceções com `try-catch` multi-catch e leitura segura de entrada do usuário.
+- `ExemploExceptionDivisaoInteiros`: divisão de dois números lidos via `Scanner`, tratando `InputMismatchException`/`NumberFormatException` (entrada não numérica), `NoSuchElementException` (entrada ausente/EOF), `ArithmeticException` (divisão por zero) e um `catch` genérico como rede de segurança para exceções não previstas.
 
 ### `streams`
 Processamento funcional de coleções com a Stream API.
