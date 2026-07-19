@@ -12,6 +12,7 @@ import main.java.br.com.cidaluna.datahora.ExemploDataHora;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploCondicional;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoFor;
 import main.java.br.com.cidaluna.estruturascontrole.ExemploLacoWhile;
+import main.java.br.com.cidaluna.excecoes.ExemploExceptionDivisaoInteiros;
 import main.java.br.com.cidaluna.io.ExemploIoTradicional;
 import main.java.br.com.cidaluna.io.ExemploNio2Files;
 import main.java.br.com.cidaluna.io.ExemploNioBuffer;
@@ -70,5 +71,8 @@ public class Main {
 
         System.out.println("\n### java.nio.file (NIO.2) ###");
         ExemploNio2Files.executar();
+
+        System.out.println("\n### Exceptions ###");
+        ExemploExceptionDivisaoInteiros.executar();
     }
 }
