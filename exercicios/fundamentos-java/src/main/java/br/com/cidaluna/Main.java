@@ -20,6 +20,7 @@ import main.java.br.com.cidaluna.io.GeradorDeArquivo;
 import main.java.br.com.cidaluna.optional.ExemploOptionalProduto;
 import main.java.br.com.cidaluna.reflection.ExemploReflectionProduto;
 import main.java.br.com.cidaluna.regex.ExemploRegexCliente;
+import main.java.br.com.cidaluna.streams.ExemploStreamVeiculo;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -74,5 +75,8 @@ public class Main {
 
         System.out.println("\n### Exceptions ###");
         ExemploExceptionDivisaoInteiros.executar();
+
+        System.out.println("\n### Streams ###");
+        ExemploStreamVeiculo.executar();
     }
 }
