@@ -4,7 +4,7 @@ out/
 !**/src/test/**/out/
 
 # Arquivos gerados por benchmarks de IO — nunca commitar
-exercicios/fundamentos-java/benchmarck.txt
+benchmarck.txt
 
 ### Eclipse ###
 .apt_generated
