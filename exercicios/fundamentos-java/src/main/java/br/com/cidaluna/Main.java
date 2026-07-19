@@ -1,5 +1,6 @@
 package br.com.cidaluna;
 
+import br.com.cidaluna.json.ExemploGsonProduto;
 import main.java.br.com.cidaluna.annotation.ExemploAnnotationProduto;
 import main.java.br.com.cidaluna.annotation.ExemploVisibleCliente;
 import main.java.br.com.cidaluna.annotation.ExemploVisibleProduto;
@@ -78,5 +79,8 @@ public class Main {
 
         System.out.println("\n### Streams ###");
         ExemploStreamVeiculo.executar();
+
+        System.out.println("\n### JSON ###");
+        ExemploGsonProduto.executar();
     }
 }
