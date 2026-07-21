@@ -5,6 +5,7 @@ import mx.florinda.enums.CategoriaCardapio;
 
 import java.sql.SQLOutput;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -16,7 +17,9 @@ public class Main {
         List<ItemCardapio> itens = database.listaDeItensCardapio();
 
         // Saber quais as categorias realmente tenho no cardapio
-        Set<CategoriaCardapio> categorias = new HashSet<>();
+        // LinkedHashSet guarda os dados seguindo a ordem de inserção dos elementos
+
+        Set<CategoriaCardapio> categorias = new LinkedHashSet<>();
         for(ItemCardapio item: itens){
             CategoriaCardapio categoria = item.categoria();
             categorias.add(categoria);
