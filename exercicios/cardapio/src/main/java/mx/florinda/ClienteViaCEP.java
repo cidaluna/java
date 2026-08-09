@@ -8,16 +8,10 @@ public class ClienteViaCEP {
     public static void main(String[] args) throws Exception {
         URL url = new URL("https://viacep.com.br/ws/01001000/json/");
 
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(url.openStream());
+        try (Scanner scanner = new Scanner(url.openStream())) { // nesse caso ele mesmo fecha o scanner
             while(scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 System.out.println(line);
-            }
-        } finally {
-            if (scanner != null) {
-                scanner.close();
             }
         }
 
