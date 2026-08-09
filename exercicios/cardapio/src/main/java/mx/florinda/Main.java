@@ -24,5 +24,7 @@ public class Main {
             System.out.println("Item não encontrado!");
         }
 
+        String outraMensagem = optionalItem.map(ItemCardapio::toString).orElse("Ops! Item não encontrado.");
+        System.out.println(outraMensagem);
     }
 }
