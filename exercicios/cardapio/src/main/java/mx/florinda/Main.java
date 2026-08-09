@@ -4,10 +4,7 @@ import mx.florinda.cardapio.ItemCardapio;
 import mx.florinda.enums.CategoriaCardapio;
 
 import java.sql.SQLOutput;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -16,22 +13,16 @@ public class Main {
         Database database = new Database();
         List<ItemCardapio> itens = database.listaDeItensCardapio();
 
-        // Saber quais as categorias realmente tenho no cardapio
-        // LinkedHashSet guarda os dados seguindo a ordem de inserção dos elementos
+       itens.forEach(System.out::println);
 
-        Set<CategoriaCardapio> categorias = new LinkedHashSet<>();
-        for(ItemCardapio item: itens){
-            CategoriaCardapio categoria = item.categoria();
-            categorias.add(categoria);
-        }
-        for(CategoriaCardapio categoria : categorias){
-            System.out.println(categoria);
+       System.out.println("----------");
+
+        Optional<ItemCardapio> optionalItem = database.itemCardapioPorId(31L);
+        if (optionalItem.isPresent()) {
+            System.out.println(optionalItem);
+        } else {
+            System.out.println("Item não encontrado!");
         }
 
-        System.out.println("----> Stream");
-        itens.stream()
-                .map(ItemCardapio::categoria)
-                .collect(Collectors.toSet())
-                .forEach(System.out::println);
     }
 }
