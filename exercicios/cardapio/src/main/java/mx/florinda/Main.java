@@ -1,30 +1,29 @@
 package mx.florinda;
 
 import mx.florinda.cardapio.ItemCardapio;
-import mx.florinda.enums.CategoriaCardapio;
+import java.math.BigDecimal;
 
-import java.sql.SQLOutput;
-import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
 
         Database database = new Database();
-        List<ItemCardapio> itens = database.listaDeItensCardapio();
 
-       itens.forEach(System.out::println);
+        ItemCardapio item = database.itemCardapioPorId(1L).orElseThrow(); // 2.99
 
-       System.out.println("----------");
+        database.alteraPrecoItemCardapio(1L, new BigDecimal("3.99")); // 2.99 => 3.99
+        ItemCardapio item1 = database.itemCardapioPorId(1L).orElseThrow(); // 3.99
 
-        Optional<ItemCardapio> optionalItem = database.itemCardapioPorId(31L);
-        if (optionalItem.isPresent()) {
-            System.out.println(optionalItem);
-        } else {
-            System.out.println("Item não encontrado!");
-        }
+        database.alteraPrecoItemCardapio(1L, new BigDecimal("2.99")); // 3.99 => 2.99
+        ItemCardapio item2 = database.itemCardapioPorId(1L).orElseThrow(); // 2.99
 
-        String outraMensagem = optionalItem.map(ItemCardapio::toString).orElse("Ops! Item não encontrado.");
-        System.out.println(outraMensagem);
+        database.alteraPrecoItemCardapio(1L, new BigDecimal("4.99")); // 2.99 => 4.99
+        ItemCardapio item3 = database.itemCardapioPorId(1L).orElseThrow(); // 4.99
+
+        System.out.println("== " + (item == item2));
+        System.out.println("equals() " + (item.equals(item2)));
+        System.out.println("hashCode() " + (item.hashCode() == item2.hashCode()));
+
+        database.rastroAuditoriaPrecos();
     }
 }
