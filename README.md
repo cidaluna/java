@@ -106,6 +106,55 @@ Processamento funcional de coleções com a Stream API.
 Execute a classe `MainClass` diretamente pela IDE. Ela chama, em sequência, os exemplos de cada pacote listado acima, exibindo os resultados no console.
  
 ---
+
+## Como Testar a API Localmente (Windows)
+
+Por padrão, o terminal PowerShell do Windows confunde o comando `curl` com um utilitário interno do sistema, o que pode cortar o resultado do JSON com reticências (`...`). 
+
+Para contornar isso e visualizar a lista completa de dados do cardápio, utilize o executável real do Curl adicionando o `.exe`.
+
+### Comando de Teste
+
+* **Utilidade:** Realiza uma requisição HTTP do tipo GET para o servidor, ativando o modo detalhado (`-v`) para visualizar os cabeçalhos da resposta (como o `Content-Type`) junto com o corpo do JSON completo.
+* **Comando no Terminal:**
+
+```powershell
+curl.exe -v http://localhost:8000/itensCardapio.json
+```
+---
+
+## Testes de Carga com Apache JMeter
+
+Para testar o desempenho e o comportamento do servidor HTTP sob múltiplas requisições simultâneas (threads), utilizamos o **Apache JMeter**.
+
+### Pré-requisitos (Configuração no Windows)
+Como o JMeter é portátil, para conseguir executá-lo diretamente pelo terminal do IntelliJ, certifique-se de:
+1. Baixar o arquivo `.zip` (Binaries) no site oficial do Apache JMeter.
+2. Extrair a pasta no seu computador (ex: `C:\apache-jmeter-X.X.X`).
+3. Adicionar o caminho da pasta `bin` (ex: `C:\apache-jmeter-X.X.X\bin`) na variável de sistema **`Path`** do Windows.
+4. Reiniciar o IntelliJ para que o terminal reconheça o comando.
+
+### Comandos Úteis no Terminal
+
+* **Verificar a Instalação:**
+  Exibe a versão do JMeter instalada para garantir que o terminal reconheceu o comando.
+  ```powershell
+  jmeter -v
+  ```
+
+* **Abrir a Interface Gráfica (GUI):**
+  Abre a tela visual do JMeter para criar, editar e desenhar os planos de testes (criar o Grupo de Usuários/Threads e configurar a requisição HTTP para `http://localhost:8000/itensCardapio.json`).
+  ```powershell
+  jmeter
+  ```
+
+* **Rodar Testes em Modo CLI (Silencioso - Recomendado para Performance):**
+  Para testes reais de estresse, a própria ferramenta recomenda não usar a tela visual (pois ela consome muita memória do seu PC). Usamos o terminal para rodar o teste e salvar o relatório:
+  ```powershell
+  jmeter -n -t caminho/do/seu/plano_de_teste.jmx -l resultado.jtl
+  ```
+  *(Onde `-n` ativa o modo sem interface gráfica, `-t` aponta para o arquivo do teste criado, e `-l` gera o arquivo com os resultados).*
+---
  
 ## Convenções do Projeto
  
