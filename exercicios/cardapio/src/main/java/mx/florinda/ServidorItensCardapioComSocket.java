@@ -46,7 +46,7 @@ public class ServidorItensCardapioComSocket {
 
             String request = requestBuilder.toString();
             System.out.println(request);
-            System.out.println("\n\nChegou um novo request");
+            System.out.println("\n\nChegou um novo request ---------------");
 
             String[] requestChunks = request.split("\r\n\r\n");
             String requestLineAndHeaders = requestChunks[0];
